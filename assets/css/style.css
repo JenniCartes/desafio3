@@ -1,0 +1,126 @@
+
+/********Menu de navegación******/
+nav{
+    padding: 0 10px 0 10px;
+    grid-area: menu_navegacion;
+    background-color: #CC444B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+
+nav div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    
+}
+
+nav ul{
+    display: none;
+}
+
+
+/******Sección de filtros de búsqueda*****/
+section{
+    padding: 10px;
+    grid-area: busqueda;
+    background-color:#DF7373 ;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+}
+section p{
+    margin: 2px
+}
+
+/*********Sección principal*******/
+main{
+     padding: 20px;
+     grid-area: main;
+     background-color: white;
+     display: flex;
+     flex-direction: column;
+}
+.boxes{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.box{
+    border: solid 1px #DF7373; 
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 16rem;
+    padding: 10px;
+}
+.pags{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #CC444B;
+    padding-top: 10px;
+}
+.pags div{
+    width: 20px;
+    border: #DF7373 solid 1px;
+}
+
+   /*********Pie de página********/
+footer{
+    padding: 5px;
+    grid-area: footer;
+    background-color: #da5552;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+body{
+    
+    margin: 0;
+    padding: 0px;
+    display: grid;
+    border: solid 1px black;
+    grid-template-areas: 
+    'menu_navegacion'
+    'busqueda'
+    'main'
+    'footer';
+}
+
+
+@media (min-width:576px){
+    body{
+        grid-template-areas:
+        'menu_navegacion busqueda'
+        'menu_navegacion main'
+        'footer main';
+        grid-template-columns: 2fr 10fr;
+    }
+    .burger{
+        display: none;
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        justify-content: start;
+        
+    }
+    nav ul{
+       list-style: none;
+       display: flex;
+       flex-direction:column;
+       align-items: center;
+       padding: 0;
+    }   
+
+    nav li{
+        padding: 10px 0 10px 0;
+    }
+}
